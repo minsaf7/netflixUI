@@ -150,7 +150,129 @@ class _NetflixHomeState extends State<NetflixHome> {
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   )),
             ],
-          )
+          ),
+          Container(
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 50.0),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        "My List",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                    child: Container(
+                      color: Colors.white,
+                      width: 80.0,
+                      height: 30.0,
+                      child: Center(
+                        child: Center(
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.play_arrow,
+                                color: Colors.black,
+                              ),
+                              Text("Play")
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    padding: EdgeInsets.only(left: 75.0)),
+                Padding(
+                  padding: EdgeInsets.only(left: 50.0),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.info,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        "Info",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Container(
+              //  color: Colors.white,
+              height: 20.0,
+              child: Text(
+                "Preview",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          Container(
+              // color: Colors.white,
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            child: CircleAvatar(
+                              //backgroundColor: Colors.white,
+                              backgroundImage: NetworkImage(
+                                  'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg'),
+                              radius: 60.0,
+                            ),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.red),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 20.0,
+                        )
+                      ],
+                    );
+                  })),
+          Container(
+              // color: Colors.white,
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(1.0),
+                          child: Container(
+                              //padding: EdgeInsets.all(5.0),
+                              height: 500.0,
+                              width: 200.0,
+                              //color: Colors.red,
+                              child: Image.network(
+                                  'https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UY1200_CR90,0,630,1200_AL_.jpg')),
+                        ),
+                        Container(
+                          width: 20.0,
+                        )
+                      ],
+                    );
+                  }))
         ],
       ),
     );
